@@ -1,0 +1,16 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+anthropic>=0.40
+google-genai>=1.0
+supabase>=2.10
+pydantic>=2.9
+python-dotenv>=1.0
+
+# File extraction for the ingestion pipeline (typed documents only, no OCR).
+python-docx>=1.1
+pypdf>=5.0
+python-pptx>=1.0
+
+# Optional: embeddings provider for vector Similar Cases. Without a key the
+# feature falls back to Postgres full-text search and still works.
+openai>=1.50

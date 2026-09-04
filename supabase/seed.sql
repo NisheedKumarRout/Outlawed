@@ -1,0 +1,29 @@
+-- ============================================================
+-- Intentionally empty of data. Seeding is done by supabase/seed.py.
+--
+-- This file exists because supabase/config.toml points at it
+-- (`[db.seed] sql_paths = ["./seed.sql"]`), so `supabase db reset` reads it.
+-- Leaving it absent breaks that command; leaving it zero-byte just looks
+-- like unfinished work.
+--
+-- Why Python and not SQL: seeding has to create real Supabase Auth users
+-- before it can insert anything. Every organisation in the seed owns an
+-- account, and `posts.org_id -> organizations.id -> profiles.id -> auth.users.id`,
+-- so a row cannot exist until its account does. Creating auth users needs the
+-- Admin API (`auth.admin.create_user`), which plain SQL cannot call.
+--
+-- To seed:
+--
+--     pip install -r agent-service/requirements.txt
+--     python supabase/seed.py
+--
+-- Needs SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the repository-root
+-- .env. Safe to re-run: post ids are derived from their titles with uuid5,
+-- and existing posts and verification requests are left untouched.
+--
+-- What it creates: OutLawed India as the platform admin, KSLSA and three real
+-- District Legal Services Authorities (Haveri, Chikkaballapur, Kolar) as
+-- verified contributing organisations, Ramanagara DLSA as a still-pending
+-- verification application, and eight insights drawn from the real OTR
+-- Insights report and PLV qualitative survey.
+-- ============================================================

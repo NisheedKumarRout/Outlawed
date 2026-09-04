@@ -1,0 +1,23 @@
+.env
+.venv/
+
+# Local environment files
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+.next/
+.next-admin/
+out/
+npm-debug.log*
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local tooling
+.DS_Store
+*.zip
