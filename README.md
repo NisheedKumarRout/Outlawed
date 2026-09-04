@@ -1,5 +1,5 @@
 # OUTLAWED OTR
-
+***DEPLOYED AT:*** https://outlawed-rust.vercel.app/login
 **A verified knowledge-to-action platform for legal-aid organisations.**
 
 Not a forum. Not a searchable PDF archive. A system that turns one
